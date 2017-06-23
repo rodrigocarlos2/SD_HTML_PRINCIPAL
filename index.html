@@ -25,8 +25,8 @@
 
   <div>
         <ul>
-            <li><a href="#Section-1">SISMAC: Sistema de Monitoramento Automatizado de Colméias)</a></li>
-            <li><a href="#Section-2">DiagCard: Arquitetura Móvel para Diagnóstico de Arritimias Cardíacas)</a></li>
+            <li><a href="#Section-1">SISMAC: Sistema de Monitoramento Automatizado de Colméias</a></li>
+            <li><a href="#Section-2">DiagCard: Arquitetura Móvel para Diagnóstico de Arritimias Cardíacas</a></li>
             <li><a href="#Section-3">Sistema para Controle de Água dos Canteiros da UFPI </a></li>
             <li><a href="#Section-4">Análise de Desempenho de uma Sistema Distribuído para Segmentação de Imagem da Retina</a></li>
             <li><a href="#Section-5">Aplicativo para Auxiliar o Atendimento de Restaurantes</a></li>
@@ -54,43 +54,40 @@
 
     <br>
 
-    <p>Neste trabalho foi desenvolvido um sistema distribuído para monitoramento de colmeias com abelhas tendo o objetivo de disponibilizar aos apicultores informações sobre a temperatura interna dentro da colmeia, trazendo assim mais comodidade no manejo das abelhas.</p>
+    <p align="justify">Neste trabalho foi desenvolvido um sistema distribuído para monitoramento de colmeias com abelhas tendo o objetivo de disponibilizar aos apicultores informações sobre a temperatura interna dentro da colmeia, trazendo assim mais comodidade no manejo das abelhas.</p>
 
-    <p>O sistema foi construído utilizando a infraestrutura Internet das Coisas (IoT) como modelo. A arquitetura desse sistema consiste em sensores de temperatura, que terão função de receptores ambientais;  uma placa arduino, como o receptor dos dados colhidos pelos sensores; plataformas de IoT para recebimento e processamento dos dados e uma aplicação cliente para receber as informações referentes à temperatura da colmeia.</p>
+    <p align="justify">O sistema foi construído utilizando a infraestrutura Internet das Coisas (IoT) como modelo. A arquitetura desse sistema consiste em sensores de temperatura, que terão função de receptores ambientais;  uma placa arduino, como o receptor dos dados colhidos pelos sensores; plataformas de IoT para recebimento e processamento dos dados e uma aplicação cliente para receber as informações referentes à temperatura da colmeia.</p>
 
     <h3>Componentes</h3>
 
     <br>
 
-    <p>Os componentes de hardware utilizados neste projeto, foram sensores de temperatura DS18B20, uma ethernet shield w5100 e uma placa arduino mega. O sensor DS18B20 é capaz de medir temperaturas que vão de -55º C até +125º C com uma acurácia de ± 0.5º C. Este sensor vem envolto por uma cápsula de metal que o protege do ambiente externo sem interferir na sua medição essa proteção extra torna o sensor perfeito para ser utilizado em uma colmeia que é um ambiente hostil a circuitos eletrônicos.</p>
+    <p align="justify">Os componentes de hardware utilizados neste projeto, foram sensores de temperatura DS18B20, uma ethernet shield w5100 e uma placa arduino mega. O sensor DS18B20 é capaz de medir temperaturas que vão de -55º C até +125º C com uma acurácia de ± 0.5º C. Este sensor vem envolto por uma cápsula de metal que o protege do ambiente externo sem interferir na sua medição essa proteção extra torna o sensor perfeito para ser utilizado em uma colmeia que é um ambiente hostil a circuitos eletrônicos.</p>
 
-    <p> O Mega 2560 é uma placa de microcontrolador baseada no ATmega2560. Possui 54 pinos de entrada/saída digitais (dos quais 15 podem ser utilizados como saídas PWM), 16 entradas analógicas, 4 UARTs (portas seriais de hardware), um oscilador de cristal de 16 MHz O painel Mega 2560 é compatível com a maioria dos shields projetados para o Uno e os antigos painéis Duemilanove ou Diecimila.
+    <p align="justify"> O Mega 2560 é uma placa de microcontrolador baseada no ATmega2560. Possui 54 pinos de entrada/saída digitais (dos quais 15 podem ser utilizados como saídas PWM), 16 entradas analógicas, 4 UARTs (portas seriais de hardware), um oscilador de cristal de 16 MHz O painel Mega 2560 é compatível com a maioria dos shields projetados para o Uno e os antigos painéis Duemilanove ou Diecimila.
     </p>
 
-    <p>O arduino Ethernet Shield w5100 permite que uma placa arduino se conecte à internet. O w5100 fornece uma pilha de rede (IP) através de TCP e UDP. Ele suporta até quatro conexões de soquete simultâneas. O shield Ethernet se conecta a uma placa arduino usando cabeçalhos longos que se estendem através do escudo. Isso mantém o layout do pino intacto e permite que outro escudo seja empilhado no topo. O Ethernet Shield possui uma conexão RJ-45 padrão, com um transformador de linha integrado e Power over Ethernet habilitado.</p>
+    <p align="justify">O arduino Ethernet Shield w5100 permite que uma placa arduino se conecte à internet. O w5100 fornece uma pilha de rede (IP) através de TCP e UDP. Ele suporta até quatro conexões de soquete simultâneas. O shield Ethernet se conecta a uma placa arduino usando cabeçalhos longos que se estendem através do escudo. Isso mantém o layout do pino intacto e permite que outro escudo seja empilhado no topo. O Ethernet Shield possui uma conexão RJ-45 padrão, com um transformador de linha integrado e Power over Ethernet habilitado.</p>
 
     <h3>Plataformas de IoT</h3>
 
     <br>
 
-    <p>Este projeto utilizou plataformas de IoT para armazenamento e processamento dos dados na nuvem. Para comunicação com arduino foi utilizada a plataforma thinger IO essa plataforma oferece uma infra-estrutura de IoT escalável e pronta para conectar vários de dispositivos. Uma das principais vantagens do thinger IO é a possibilidade de conexão com as principais plataformas eletrônicas: arduino, Raspberry Pi, Intel Edison.</p>
+    <p align="justify">Este projeto utilizou plataformas de IoT para armazenamento e processamento dos dados na nuvem. Para comunicação com arduino foi utilizada a plataforma thinger IO essa plataforma oferece uma infra-estrutura de IoT escalável e pronta para conectar vários de dispositivos. Uma das principais vantagens do thinger IO é a possibilidade de conexão com as principais plataformas eletrônicas: arduino, Raspberry Pi, Intel Edison.</p>
 
-    <p>Para análise e processamento dos dados foi utilizada a plataforma Keen IO. A Keen foi projetada para oferecer aos desenvolvedores flexibilidade e extensibilidade de uma pilha de análise personalizada, sem o incômodo e risco de gerenciar a grande infraestrutura de dados. A keen oferece APIs prontas para produção, dando a possibilidade de o desenvolvedor realizar análise robustas de seus dados menos tempo.</p>
+    <p align="justify">Para análise e processamento dos dados foi utilizada a plataforma Keen IO. A Keen foi projetada para oferecer aos desenvolvedores flexibilidade e extensibilidade de uma pilha de análise personalizada, sem o incômodo e risco de gerenciar a grande infraestrutura de dados. A keen oferece APIs prontas para produção, dando a possibilidade de o desenvolvedor realizar análise robustas de seus dados menos tempo.</p>
 
     <h3>Arquitetura</h3>
 
     <br>
 
-    <p>Como a arquitetura desse projeto utiliza infraestrutura IoT, o mesmo deve conectar alguma COISA a internet, neste caso uma colmeia de abelhas onde os dados de temperatura são coletados e por um sensor de temperatura conectados a um arduino que irá formatar e enviar esses dados para a plataforma thinger IO utilizada para comunicação com o arduino e armazenamento dos dados provenientes dele. após isso os  dados são repassados para a plataforma Kenn IO que irá realizar a análise e processamento dos dados, após esse dados serem tratados podem ser disponibilizados ao apicultor e é justamente isso que acontece através da aplicação cliente que recebe os dados em forma de medidas e gráficos, a arquitetura pode ser vista na Figura abaixo.</p>
+    <p align="justify">Como a arquitetura desse projeto utiliza infraestrutura IoT, o mesmo deve conectar alguma COISA a internet, neste caso uma colmeia de abelhas onde os dados de temperatura são coletados e por um sensor de temperatura conectados a um arduino que irá formatar e enviar esses dados para a plataforma thinger IO utilizada para comunicação com o arduino e armazenamento dos dados provenientes dele. após isso os  dados são repassados para a plataforma Kenn IO que irá realizar a análise e processamento dos dados, após esse dados serem tratados podem ser disponibilizados ao apicultor e é justamente isso que acontece através da aplicação cliente que recebe os dados em forma de medidas e gráficos, a arquitetura pode ser vista na Figura abaixo.</p>
     
     <figure>
       <CENTER><img src="arq.jpg" alt="arquitetura" title="Logo do CSS" /></CENTER>
       <CENTER><figcaption>Arquitetura do SISMAC</figcaption>
       </CENTER>
     </figure>
-
-    <CENTER> <h4>Link do Projeto<a href="https://github.com/Ricardobruno06/SISMAC"> <img src="github-logo-icon-16174.png" height="50" width="50" /></a></h4></CENTER>
-
 
   </div>
     
@@ -114,28 +111,28 @@
 
     <br>
 
-    <p>Neste trabalho, foi planejada e desenvolvida uma arquitetura distribuída móvel para monitoramento de frequências cardíacas tendo como objetivo de disponibilizar um método de prevenção e monitoramento de batimentos cardíacos com baixo custo.</p>
+    <p align="justify">Neste trabalho, foi planejada e desenvolvida uma arquitetura distribuída móvel para monitoramento de frequências cardíacas tendo como objetivo de disponibilizar um método de prevenção e monitoramento de batimentos cardíacos com baixo custo.</p>
 
-    <p>O sistema foi construído utilizando a infraestrutura Internet das Coisas (IoT) como modelo. A arquitetura desse sistema consiste em uma pulseira como sensor de batimentos cardíacos, e um smartphone como receptor e processador dos dados colhidos pelo sensor cardíaco.</p>
+    <p align="justify">O sistema foi construído utilizando a infraestrutura Internet das Coisas (IoT) como modelo. A arquitetura desse sistema consiste em uma pulseira como sensor de batimentos cardíacos, e um smartphone como receptor e processador dos dados colhidos pelo sensor cardíaco.</p>
 
     <h3>Componentes</h3>
 
     <br>
 
-    <p>Os componentes de hardware utilizados neste projeto foram a pulseira Mi Band 2 da Xaiomi e um smartphone para executar a aplicação. A pulseira Mi Band 2 é capaz de medir temperaturas em tempo real, além também de poder armazenar os passos e calorias gastas pelo usuário. Este sensor é adequado para monitoramento cardíaco por ser portável, o que proporciona uso em muitos lugares e atividades.</p>
+    <p align="justify">Os componentes de hardware utilizados neste projeto foram a pulseira Mi Band 2 da Xaiomi e um smartphone para executar a aplicação. A pulseira Mi Band 2 é capaz de medir temperaturas em tempo real, além também de poder armazenar os passos e calorias gastas pelo usuário. Este sensor é adequado para monitoramento cardíaco por ser portável, o que proporciona uso em muitos lugares e atividades.</p>
 
     <h3>Plataformas de IoT</h3>
 
     <br>
 
-    <p>
+    <p align="justify">
     Este projeto se em uma arquitetura de Internet das Coisas. A pulseira Mi Band 2 possui bluetooth, e com essa conexão foi feita a comunicação com o aplicativo. Para colhimento e processamento dos dados foi desenvolvida uma aplicativo Android que se baseia em uma técnica de diagnóstico cardíaco apresentada no American College of Cardiology.</p>
 
     <h3>Arquitetura</h3>
 
     <br>
 
-    <p>A arquitetura móvel de IoT proposta é dividida entre sensor e receptor que também é capaz de processar o diagnóstico da saúde cardíaca do usuário. A Figura abaixo apresenta a arquitetura descrita.
+    <p align="justify">A arquitetura móvel de IoT proposta é dividida entre sensor e receptor que também é capaz de processar o diagnóstico da saúde cardíaca do usuário. A Figura abaixo apresenta a arquitetura descrita.
     </p>
     
     <figure>
@@ -145,8 +142,6 @@
     </figure>
 
     <br>
-
-    O link do projeto não pode ser disponibilizado, por ser um repositório privado dos autores.
 
   </div>
     
@@ -201,8 +196,11 @@
                 <figcaption><i>Figura 1. Arduino Uno</i></figcaption>
             </center><br><br>
 
+            <p align="justify">
            A alimentação externa é feita através do conector Jack com positivo no centro, onde o valor de tensão da fonte externa deve estar entre os limites 6V. a 20V., porém se alimentada com uma tensão abaixo de 7V., a tensão de funcionamento da placa, que no Arduino Uno é 5V, pode ficar instável e quando alimentada com tensão acima de 12V, o regulador de tensão da placa pode superaquecer e danificar a placa.
-            A seguir são exibidos os conectores de alimentação para conexão de shields e módulos na placa Arduino UNO:<br><br>
+            A seguir são exibidos os conectores de alimentação para conexão de shields e módulos na placa Arduino UNO:
+            </p>
+            <br><br>
 
             <center>
                 <img src="imagens/5-arduino-uno-power_pins.png" alt="imagemArduino" width="350" height="202" />
@@ -230,7 +228,13 @@
 
         <br>
 
-            A protoboard tem a possibilidade de montar, desenvolver e testar diversos circuitos eletrônicos, tudo sem ter que soldar os componentes. Sendo assim, a protoboard é o lugar mais recomendado para montar este circuito e efetuar todos os testes necessários. Uma outra utilização muito comum é interligar sensores e circuitos integrados (CIs) aos diversos microcontroladores disponíveis como, por exemplo, o Arduino. Na imagem abaixo mostra as três áreas disponíveis nas protoboards, a área para montagem de CIs (parte central da protoboard), a área para distribuição da alimentação elétrica (duas linhas superiores e inferiores) e a área para montagem dos componentes (colunas). As linhas azuis representam as ligações internas da protoboard, ou seja, internamente elas já estão interligadas.<br><br>
+            <p align="justify">
+
+            A protoboard tem a possibilidade de montar, desenvolver e testar diversos circuitos eletrônicos, tudo sem ter que soldar os componentes. Sendo assim, a protoboard é o lugar mais recomendado para montar este circuito e efetuar todos os testes necessários. Uma outra utilização muito comum é interligar sensores e circuitos integrados (CIs) aos diversos microcontroladores disponíveis como, por exemplo, o Arduino. Na imagem abaixo mostra as três áreas disponíveis nas protoboards, a área para montagem de CIs (parte central da protoboard), a área para distribuição da alimentação elétrica (duas linhas superiores e inferiores) e a área para montagem dos componentes (colunas). As linhas azuis representam as ligações internas da protoboard, ou seja, internamente elas já estão interligadas.
+
+            </p>
+
+            <br><br>
 
             <center>
                 <img src="imagens/17_img_1_H.png" alt="imagemProtoboard" width="350" height="202" />
@@ -267,7 +271,13 @@
 
         <br>
 
-       O sensor de umidade do solo consiste em 2 partes: uma sonda que entra em contato com o solo, e um pequeno módulo contendo um chip comparador LM393 (datasheet), que vai ler os dados que vêm do sensor e enviá-los para o microcontrolador, no caso, um Arduino Uno. Como saída, temos um pino D0, que fica em nível 0 ou 1 dependendo da umidade, e um pino de saída analógica (A0), que possibilita monitorar com maior precisão usando uma porta analógica do microcontrolador. O módulo tem um led que indica quando a placa está sendo alimentada corretamente, e outro que acende quando a saída digital for acionada. A sensibilidade do módulo é ajustada por meio do potenciômetro existente na placa.<br><br>
+        <p align="justify">
+
+       O sensor de umidade do solo consiste em 2 partes: uma sonda que entra em contato com o solo, e um pequeno módulo contendo um chip comparador LM393 (datasheet), que vai ler os dados que vêm do sensor e enviá-los para o microcontrolador, no caso, um Arduino Uno. Como saída, temos um pino D0, que fica em nível 0 ou 1 dependendo da umidade, e um pino de saída analógica (A0), que possibilita monitorar com maior precisão usando uma porta analógica do microcontrolador. O módulo tem um led que indica quando a placa está sendo alimentada corretamente, e outro que acende quando a saída digital for acionada. A sensibilidade do módulo é ajustada por meio do potenciômetro existente na placa.
+
+       </p>
+
+       <br><br>
 
         <center>
             <img src="imagens/Sensor-de-solo-umidade-modulo.png" alt="imagemsensor" width="350" height="202" />
@@ -284,7 +294,12 @@
       <h4> Módulo Rele </h4>
 
         <br>
-       O relé 5V pode ser também usado com AVR, PIC, Raspberry, 8051, ARM ou até mesmo o seu circuito eletrônico personalizado. Usando dois pinos do módulo relé arduino, pode controlar cargas como lâmpadas, motores, fechaduras e eletrodomésticos, desde que a corrente de operação não ultrapasse 10 A (ampéres). Cada relé desse módulo suporta cargas de até 10 A, em 125 VAC, 250 VAC ou 30 VDC. Leds indicadores mostram o estado do relé  (ligado/desligado) em cada canal. O módulo já contém todo o circuito de proteção para evitar danos ao microcontrolador, e possui baixa corrente de operação. <br><br>
+        <p align="justify">
+       O relé 5V pode ser também usado com AVR, PIC, Raspberry, 8051, ARM ou até mesmo o seu circuito eletrônico personalizado. Usando dois pinos do módulo relé arduino, pode controlar cargas como lâmpadas, motores, fechaduras e eletrodomésticos, desde que a corrente de operação não ultrapasse 10 A (ampéres). Cada relé desse módulo suporta cargas de até 10 A, em 125 VAC, 250 VAC ou 30 VDC. Leds indicadores mostram o estado do relé  (ligado/desligado) em cada canal. O módulo já contém todo o circuito de proteção para evitar danos ao microcontrolador, e possui baixa corrente de operação. 
+
+       </p>
+
+       <br><br>
 
         <center>
             <img src="imagens/moduloRele.jpg" alt="imagemsensor" width="350" height="202" />
@@ -308,9 +323,31 @@
         •   Cola quente e supercola;<br><br>
 
        FABRICAÇÃO:<br><br>
-       Inicialmente foi feito dois buracos em uma das tampas (na parte superior e na lateral), um para encaixar um pedaço da mangueira de nível (que foi dividida em dois pedaços), que será encaixado no furo da lateral, e o outro para encaixar o motor, que vai encaixar na parte superior da tampa, e na outra tampa foi feito somente um furo para encaixar outro pedaço da mangueira de nível. Após ser feito os furos na primeira tampa, o motor foi encaixado no furo e foi colado com supercola, e na superfície entre a tampa e motor utilizou-se bastante cola quente para não ocorre vazamento de água.<br> <br>
-       Um pedaço do plástico foi cortado em forma circular e feito um furo no centro para encaixar o motor, cortou-se mais quatro pedaços pequenos de plástico em forma de retângulo e colado no outro pedaço circular para formar a hélice, após montar a hélice, foi encaixada a mesma no motor por dentro da tampa de garrafa pet, usou-se cola quente para que a mesma não desencaixe do motor (é importante observar a rotação da hélice e verificar se a mesma está girando sem nenhum empecilho).<br> <br>
-       Depois de ter feito isso tudo pegou-se a outra tampa de garrafa pet, e cola encaixando na outra tampa, para não ocorrer vazamento utiliza-se bastante cola quente. Depois de encaixar uma tampa na outra, pega outro pedaço da mangueira de nível e cola encaixando no buraco da outra tampa, novamente utilize bastante cola quente para não ocorrer vazamento. Fizemos o teste com água para ver se a bomba funcionou, para ligar o motor utilizeilizamos inicialmente uma bateria de celular, após o teste com a bateria, liagamos a bomba no rele, para o funcionamnto do sistema de irrigação.<br><br><br>
+
+       <p align="justify">
+
+       Inicialmente foi feito dois buracos em uma das tampas (na parte superior e na lateral), um para encaixar um pedaço da mangueira de nível (que foi dividida em dois pedaços), que será encaixado no furo da lateral, e o outro para encaixar o motor, que vai encaixar na parte superior da tampa, e na outra tampa foi feito somente um furo para encaixar outro pedaço da mangueira de nível. Após ser feito os furos na primeira tampa, o motor foi encaixado no furo e foi colado com supercola, e na superfície entre a tampa e motor utilizou-se bastante cola quente para não ocorre vazamento de água.
+
+       </p>
+
+
+       <br>
+
+       <p align="justify">
+
+       Um pedaço do plástico foi cortado em forma circular e feito um furo no centro para encaixar o motor, cortou-se mais quatro pedaços pequenos de plástico em forma de retângulo e colado no outro pedaço circular para formar a hélice, após montar a hélice, foi encaixada a mesma no motor por dentro da tampa de garrafa pet, usou-se cola quente para que a mesma não desencaixe do motor (é importante observar a rotação da hélice e verificar se a mesma está girando sem nenhum empecilho).
+
+       </p>
+
+       <br>
+
+       <p align="justify">
+
+       Depois de ter feito isso tudo pegou-se a outra tampa de garrafa pet, e cola encaixando na outra tampa, para não ocorrer vazamento utiliza-se bastante cola quente. Depois de encaixar uma tampa na outra, pega outro pedaço da mangueira de nível e cola encaixando no buraco da outra tampa, novamente utilize bastante cola quente para não ocorrer vazamento. Fizemos o teste com água para ver se a bomba funcionou, para ligar o motor utilizeilizamos inicialmente uma bateria de celular, após o teste com a bateria, liagamos a bomba no rele, para o funcionamnto do sistema de irrigação.
+
+       </p>
+
+       <br>
 
             <center>
                 <img src="imagens/bomba.jpg" alt="imagemsensor" width="350" height="202" />
@@ -329,7 +366,13 @@
 
         <br>
 
-       É um componente muito comum em projetos com Arduino, que permite fazer leituras de distâncias entre 2 cm e 4 metros, com precisão de 3 mm. Pode ser utilizado simplesmente para medir a distância entre o sensor e um objeto, como para acionar portas do microcontrolador, desviar um robô de obstáculos, acionar alarmes, etc.<br> <br>
+        <p align="justify">
+
+       É um componente muito comum em projetos com Arduino, que permite fazer leituras de distâncias entre 2 cm e 4 metros, com precisão de 3 mm. Pode ser utilizado simplesmente para medir a distância entre o sensor e um objeto, como para acionar portas do microcontrolador, desviar um robô de obstáculos, acionar alarmes, etc.
+
+       </p>
+
+       <br>
 
         <center>
             <img src="imagens/sen.jpg" alt="imagemsensor" width="350" height="202" />
@@ -346,7 +389,11 @@
 
         <br>
 
+        <p align="justify">
+
        É um sensor feito de material plástico (PP, segundo o fabricante), composto de uma haste na qual desliza um cilindro feito de material flutuante. Esse cilindro possui um ímã que aciona um sensor magnético no meio da haste, que por sua vez fecha o contato dos 2 fios que saem do sensor, ou seja é uma boia com fios.<br><br>
+
+       </p>
 
         <center>
             <img src="imagens/Sensor_liquido_vertical_1.JPG" alt="imagemsensor" width="350" height="202" />
@@ -359,7 +406,11 @@
 
       <center><p><b>FUNCIONAMENTO DO PROJETO</b></p></center>
 
+      <p align="justify">
+
      O vídeo abaixo mostra o projeto funcionando, porém na fase inicial. Terá também uma maquete representando os canteiros da federal onde o projeto arduíno será montado sobre ela para similar mais realidade na apresentação final.<br><br> 
+
+     </p>
 
       <center>
           <video width="1000" height="500" controls="controls" >
@@ -397,7 +448,7 @@
 
         <br>
 
-        <p>
+        <p align="justify">
             Neste trabalho, apresentamos o desenvolvimento de um sistema mobile para segmentação de imagens
             da retina em computação em nuvem. O sistema funciona primeiramente com a seleção de uma imagem
             no dispositivo móvel, para posteriormente ser enviada ao servidor para realizar a segmentação da imagem.
@@ -408,7 +459,7 @@
             no dispositivo móvel otimizando a aplicação sem comprometer os resultados.
         </p>
 
-        <p>
+        <p align="justify">
             Para o desenvolvimento da aplicação que se basea na arquitetura cliente-servidor, ou seja,
             o cliente requisita e detém dados, e o servidor processa e faz a manutenção da informação.
 
@@ -428,7 +479,7 @@
 
         </ul>
 
-        <p>
+        <p align="justify">
             A linguagem de programação java foi para programar em android para desenvolver a aplicação
             mobile contanto com a IDE() Android Studio. O rabbitmq é um middle de troca de mensagens para
             manter o controle, segurança, e entregas corretas das menssagens entre cliente e servidor.
@@ -443,7 +494,7 @@
 
         <br>
 
-        <p>
+        <p align="justify">
 
             No lado cliente com o celular android, o usuário pode selecionar a imagem em seu celular, e ao selecionar
             um botão fica apto a enviar ao middleware no sevidor . No servidor a imagem é realizado por um pré-processamento
@@ -480,13 +531,7 @@
 
         <br>
 
-        <p> O link com os códigos e imagens podem ser feito o download em :
-            <a href="https://github.com/Marcos001/Segmentation/">códigos do servidor</a>
-            &
-            <a href="hhttps://github.com/Marcos001/PIM">códigos do cliente.</a>
-        </p>
-    
-      <hr> </div>
+        </div>
     
   </div>
 
@@ -505,14 +550,14 @@
         </div>
 
       <div class="jumbotron" style="background-color:white;">   
-      <p> O bom atendimento ao cliente deve ser prioridade de qualquer negócio,
+      <p align="justify"> O bom atendimento ao cliente deve ser prioridade de qualquer negócio,
           especificamente em um restaurante, deve existir uma agilidade no momento de transferir
           o pedido do cliente à cozinha, no modo tradicional isso custa tempo, a demora está
           relacionada especificamente ao deslocamento do atendente até a cozinha onde o Chefe
           precisaria saber o pedido para então servir. Com essa necessidade, apresentamos um
           Sistema Distribuído para um Restaurante que possa agilizar o atendimento ao cliente.</p>
           
-         <p>Na maioria dos estabelecimentos das cidades enfrenta-se uma dificuldade que é
+         <p align="justify">Na maioria dos estabelecimentos das cidades enfrenta-se uma dificuldade que é
           os serviços destinados no atendimento aos clientes. É fato que muitos restaurantes
           possuem uma certa desorganização e demora no atendimento, que terminam insatisfeitos
           pela falta de um atendimento rápido e de qualidade. Esse problema dá-se também por
@@ -520,14 +565,14 @@
           demorada o fato de os garçons precisarem escrever cada pedido, realizar a entrega ao
           chefe de cozinha e retornar para o atendimento aos demais clientes.</p> 
           
-          <p>O Sistema Distribuído para Restaurante, funcionaria assim, os atendentes teriam
+          <p align="justify">O Sistema Distribuído para Restaurante, funcionaria assim, os atendentes teriam
           aplicativos Android, os quais seriam responsáveis por recolher os pedidos dos clientes,
           esses dados iriam diretamente para um servidor, que estaria localizado na cozinha, sendo
           visualizados pelo Chefe, e imediatamente os pratos seriam feitos, isso diminuiria o tempo
           de entrega do pedido ao cliente, pois, o mesmo seria recolhido e enviado diretamente a
           cozinha, no caso onde ficaria o servidor.</p>
           
-          <p>Inicialmente os atendentes (garçons) recolhem algumas informações para o
+          <p align="justify">Inicialmente os atendentes (garçons) recolhem algumas informações para o
           aplicação Android, como o número da mesa, a quantidade de pessoas em uma mesa, o
           mesmo tem acesso ao cardápio digital, que selecionará os pedidos feitos pelo cliente e em
           seguida conclui o pedido, enviando-o ao servidor. O aplicativo Android terá uma 
@@ -573,15 +618,9 @@
                 <img src = "6.png" alt = "Restaurante" width ="300px" height="400px" /> <figcaption>Tela de Liberar a Mesa, é possivel liberar mesas</figcaption>
                 <br> 
                 <br>  
-                <img src = "7.png" alt = "Restaurante" width ="300px" height="400px" /> <figcaption>Tela de Cadastro, será cadastrado um novo atendente</figcaption>
-                <br> 
-                <br>  
+                <img src = "7.png" alt = "Restaurante" width ="300px" height="400px" /> <figcaption>Tela de Cadastro, será cadastrado um novo atendente</figcaption>  
               </center>
            </figure>
-
-          <br>
-
-          <p> Para ver o conteúdo do desenvolvimento do aplicativo, acesse <a href="https://github.com/Boaz12/FlorDeMandacaru" target = "_blanck">Flor de Mandacaru</a> e fique por dentro do projeto.</p>
 
         </div> 
         
