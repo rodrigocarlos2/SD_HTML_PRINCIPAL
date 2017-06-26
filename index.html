@@ -28,6 +28,7 @@
             <li><a href="#Section-1">SISMAC: Sistema de Monitoramento Automatizado de Colméias</a></li>
             <li><a href="#Section-2">DiagCard: Arquitetura Móvel para Diagnóstico de Arritimias Cardíacas</a></li>
             <li><a href="#Section-3">Sistema para Controle de Água dos Canteiros da UFPI </a></li>
+            <li><a href="#casinha"> CASINHA - <i>CAsinha Social Integration Network for Home Assistant </a></li>
             <li><a href="#Section-4">Análise de Desempenho de uma Sistema Distribuído para Segmentação de Imagem da Retina</a></li>
             <li><a href="#Section-5">Aplicativo para Auxiliar o Atendimento de Restaurantes</a></li>
         </ul>
@@ -428,6 +429,321 @@
 
      
      
+  </div>
+
+  </section>
+
+  <section id="casinha">
+
+   <div class="container">
+    <div class="jumbotron" style="background-color:white;">
+
+      <div class="jumbotron" style="background-color:white;">
+          <CENTER> 
+            <h3> CASINHA - <i>CAsinha Social Integration Network for Home Assistant </h3>
+            <h5> Diego Fernando & Bruno </h5>
+          </CENTER>
+        </div>
+    
+      <h3>Resumo</h3>
+
+      <br>
+
+      <p>CASINHA é um projeto que utiliza os conceitos de IoT para fazer controle e monitoramento de ambientes pela rede mundial de computadores.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/casa.jpg" alt="arquitetura" title="Logo do CSS" width="500"/></CENTER>
+        <CENTER><figcaption>Projeto CASINHA.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>O projeto é todo construído a partir de tecnologias livres e neste tópico será detalhado o que quais são elas, como também suas respectivas importâncias para o projeto.</p>
+
+      <h3>Problema</h3>
+
+      <br>
+
+      <p>Seguir os conceitos da IoT não é nada fácil quando pensamos fazer algo em maior escala, como colocar o serviço a disposição de todos através de Internet, pensando nisso, o projeto ponderou alguns pontos  problemáticos relevantes para o desenvolvimento:</p>
+      <ul>
+        <li>Uma plataforma que todos possam usar;</li>
+        <li>Melhor controle dos itens a serem controlados no ambiente;</li>
+        <li>Deva ser <i>real-time;</i></li>
+        <li>Não seja só controlar componentes no ambiente.</li>
+      </ul>
+
+      <h3>Proposta</h3>
+
+      <br>
+
+      <p>A partir deste itens, chegamos a conclusão de criar algo similar a uma rede social. Nesta, os usuários poderiam se cadastrar e fazer o uso de uma forma fácil, rápida e intuitiva.</p>
+      
+      <h3>Protocolo MQTT e suas filas de mensagens</h3>
+
+      <br>
+
+      <p>Primeiramente falaremos como é a comunicação dos dispositivos via <i>internet</i>.</p>
+      <p>Optamos por utilizar neste projeto, <i>brokers</i> de mensagens. Mais especificamente usamos o protocolo MQTT. Este é um protocolo bastante atual e é voltado especificamente para a IoT por ter a característica de consumir pouquíssima banda na transferência dos dados.</p>
+      <p>O protocolo MQTT herda todos os paradigmas dos <i>brokers</i> de mensagens, mais uma de suas características principais é o uso de QoS na aplicação divididos em 3 níveis.</p>
+      <p>Mesmo tendo um broker para fazer a comunicação, a ideia principal do projeto é que tudo seja feito através da <i>internet</i>. Daí foi descoberto o <a href="https://www.cloudmqtt.com/">CloudMQTT</a>, que é um servido de <i>broker</i> em nuvem mantido pela grandiosa Amazon.</p>
+      <p><a href="https://www.cloudmqtt.com/">CloudMQTT</a>, foi a "bala de prata" para o projeto por ser gratuito até 10 conexões além de fornecer serviços para <i>WebSockets</i>, ou seja com ele podemos fazer clientes <i>Web</i>.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/01.jpg" width="800"/></CENTER>
+        <CENTER><figcaption>Fila de mensagens do CloudMQTT.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>Ok. Até este ponto já temos a comunicação entre os dispositivos via <i>internet</i>. Se você lembra que eu falei sobre <i>WebSockets</i> anteriomente, saiba então que na verdade eles não serão usados a baixo nível. Isso por que o protocolo MQTT tem clientes <i>web</i> escritos em <i>JavaScript</i> que abstraem toda a camada de <i>WebSockets</i> para um nível maior.</p>
+
+      <h3>Sistema embarcados</h3>
+
+      <br>
+
+      <p>Neste tópico será mostrado o que foi usado como <i>hardware</i> no projeto e como foi usado.</p>
+      
+      <h3>Microcontrolador <i>Arduíno</i></h3>
+
+      <br>
+
+      <p>Este é o principal embarcado do projeto, pois tudo passa por ele e ele é responsável pela atuação dentro do ambiente.</p>
+      <p><i>Arduíno</i> é uma placa de prototipagem eletrônica de código aberto. O projeto, surgido na cidade de Ivrea, na Itália, em 2005, inclui <i>hardware</i> e software livre e visa oferecer ferramentas adaptáveis e de baixo custo para a criação de projetos interativos de diversas ordens.(CANALTECH)</p>
+      Para o projeto casinha, ele além de se conectar com o <i>broker</i>, também faz a função do controle dos sensores a atuadores dentro do ambiente.
+
+      <figure>
+        <CENTER><img src="./img/arduino.jpg" width="300"/></CENTER>
+        <CENTER><figcaption>Placa Arduíno MEGA.</figcaption>
+        </CENTER>
+      </figure>
+
+      <h3>Um nó na rede com <i>Ethernet Shield</i></h3>
+
+      <br>
+
+      <p>O módulo <i>Ethernet Shield</i> é um componete auxiliar para a placa <i>Arduíno</i>. Basicamente, este módulo transforma o <i>Arduíno</i> em um nó na rede local. Consequentemente, este módulo permite o <i>Arduíno</i> se conectar ao <i>broker</i> do <a href="https://www.cloudmqtt.com/">CloudMQTT</a>.</p>
+
+      <br>
+      
+      <figure>
+        <CENTER><img src="./img/eth.jpg" width="300"/></CENTER>
+        <CENTER><figcaption>Placa Arduíno/Ethernet Shield.</figcaption>
+        </CENTER>
+      </figure>
+
+      <h3>Computação distribuída com módulos <i>Xbee's</i></h3>
+
+      <br>
+
+      <p>Os <i>Xbee's</i> são módulos sem fio que suportam envios de quadros pequenos com latência mínima e pouco consumo de energia. Ideais em projetos como os que utilizam controle na agricultura, automação residencial, sistemas de alarmes e supervisão industrial.</p>
+      <p>A característica dos <i>Xbee's</i> de serem alto organizáveis permite que a rede se alto mantenha, organizado e fazendo enlaces com qualquer dispositivo compatível a sua tecnologia. O padrão <i>ZigBee</i> vem da conotação de como as abelhas se organizam e comunicam na polimerização, de forma comuta e alto organizada.</p>
+      <p>A função do <i>Xbee</i> no projeto é distribuir o processamento dentro do ambiente, isso quer dizer que ao invés de ter fiações de longa distância para um único <i>Arduíno</i>, são colocados <i>Xbee's</i> em cada cômodo, por exemplo e este fica responsável pelos atuadores e sensores deste local.</p>
+
+      <br>
+        
+      <figure>
+        <CENTER><img src="./img/xbee.jpg" width="300"/></CENTER>
+        <CENTER><figcaption>Módulo <i>Xbee</i>.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>Os módulos ZigBee atual em três tipos de topologias diferentes:</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/topo.png" width="500"/></CENTER>
+        <CENTER><figcaption>Topologia <i>ZigBee</i>.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>Em uma rede <i>Xbee</i> pode haver componentes como coordenadores, roteadores e os <i>"end devices"</i>. Os coordenadores operam como um nó que atua como inicializador de um canal de cominação gerenciando os nós. Os Roteadores são encaminhadores de mensagens entre nós de uma rede. Os <i>"end devices"</i> são como dispositivos finais que só recebem mensagens vindas de outros nós.</p>
+
+      <p>Este projeto foi projetado em conjunto a topologia <i>Mesh</i> no modo roteador que permite que o canal seja inicializado automaticamente na entrada de novos dispositivos ou perdas de dispositivos. Dessa forma a múltiplas possibilidades de autossuficiência e otimizar o trafego de dados.</p>
+
+      <p>Para que os módulos operem de forma correta faz se necessário uma configuração previa através do XCTU da empresa <i>Digi XBee® Ecosystem</i> que permite a programação do <i>firmware</i> dos módulos. Recomendamos atenção nesta sessão pois os módulos são programados direto no <i>firmware</i>, qualquer imprevisto ou erro no <i>upload</i> do <i>firmware</i> pode ocasionar perda do dispositivo.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/xctu.png" width="600"/></CENTER>
+        <CENTER><figcaption><i>Software</i> XCTU.</figcaption>
+        </CENTER>
+      </figure>
+
+      <h3>Plataforma CASINHA e CASINHAApp</h3>
+      <p>Para que o usuário tenha acesso ao seu ambiente de qualquer lugar do mundo bastando apenas estar conectado a <i>internet</i>, foi desenvolvida a plataforma <a href="http://casinhaproject.herokuapp.com/">CASINHA.</a></p>
+      <p>A plataforma abre a possibilidade por exemplo se o usuário estiver sem computador ou celular de pedir o computador do amigo para ter acesso a casa.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/plat.jpg" width="800"/></CENTER>
+        <CENTER><figcaption>Plataforma CASINHA.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>A plataforma CASINHA, foi desenvolvida essencialmente na linguagem <i>Python</i> usando a <i>framework Django</i>. A plataforma está em um servidor de testes chamado <a href="https://www.heroku.com/">Heroku</a> que fornece um serviço PaaS para apicações via Git.</p>
+      <p>Além disso, para guardar os arquivos enviados dos usuários na plataforma, usamos a tecnologia S3 da <a href="http://aws.amazon.com/">Amazon Web Services</a> que tem uma cota gratuita de <i>uploads</i>, excelente para testes.</p>
+      <p>Dentro da plataforma CASINHA foi construída também uma API <i>Rest</i>. Esta API é consumida por um aplicativo <i>mobile</i> chamado CASINHAApp.</p>
+      <p>O CASINHAApp é um aplicativo <i>Android</i> construído em <i>PhoneGap/Cordova</i> que tem como função principal a função de fazer o controle dos atuadores do ambiente.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/app.jpg" width="300"/></CENTER>
+        <CENTER><figcaption>Aplicativo <i>Android</i> CASINHAApp.</figcaption>
+        </CENTER>
+      </figure>
+
+      <h2 style="text-align: center;">Esquema de funcionamento</h2>
+      <p>O esquemático a seguir mostra como é feita toda a comunicação para liga um <i>led</i>, por exemplo.</p>
+
+      <br>
+      
+      <figure>
+        <CENTER><img src="./img/esquema1.png" width="700"/></CENTER>
+        <CENTER><figcaption>Esquema ativação de atuador.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>Existem 3 níveis de QoS no protocolo MQTT, mas todos eles são em relação as checamento das mensagens ao destino <i>Ethernet Shield</i> e não do Xbee que é o destino final da mensagem. Para resolver esta situação resolvemos implementar uma própria política de QoS, no qual se a mensagem chegasse ao Xbee, ele retorna uma mensagem a ponte <i>Ethernet Shield</i> e este é responsável por publicar ao <i>broker</i> uma mensagem de resposta. Veremos a seguir uma imagem que representa uma resposta.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/esquema2.png" width="700"/></CENTER>
+        <CENTER><figcaption>Esquema de resposta do atuador.</figcaption>
+        </CENTER>
+      </figure>
+
+      <h2 style="text-align: center;">Uma introdução a Rede Social CASINHA</h2>
+      <p>Após ter efetuado o cadastro ou feito <i>login</i>, o usuário entrará na página inicial. Nesta são listados, tanto os ambientes que o usuário criou, como também os ambientes em que o usuário foi adicionado com participante.</p>
+      <p>Ainda nesta página, o usuário tem acesso ao seu próprio histórico desde que entrou para a plataforma. Esta lista é gerada em forma de relatório em PDF.</p>
+      <p>Outras opções também se mostram interessantes para personalização do perfil do usuário. Dentre elas estão:</p>
+      <ul>
+        <li>Editar foto de perfil;</li>
+        <li>Editar foto de capa do perfil;</li>
+        <li>Adicionar foto de perfil ao ambiente;</li>
+      </ul>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/casinha01.jpg" width="800"/></CENTER>
+        <CENTER><figcaption>Página do ambiente.</figcaption>
+        </CENTER>
+      </figure>
+
+
+      <p>Para criar um novo ambiente, o usuário deve informar os dados do <i>broker</i> na <i>Web</i>, como id do usuário, senha, <i>host</i> e porta.</p>
+      <p>Quando o usuário entra em um ambiente ele se conecta ao <i>broker</i> automaticamente. Com isso, dependendo do seu nível perante ao ambiente (se é participante ou administrador), ele pode ter mais ou menos opções.</p>
+      <p>A <i>timeline</i> mostra todas as ações que foram efetuadas no ambiente por todos os participantes. Também são exibidos os recados que os participantes podem deixar no ambiente.</p>
+      <p>Sobre o painel de controle, falaremos dele na sessão de comunicação.</p>
+      <p>A imagem abaixo mostra como é feita a criação de um tópico e de uma mensagem no ambiente.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/anim.gif" width="800"/></CENTER>
+        <CENTER><figcaption>Opções do ambiente.</figcaption>
+        </CENTER>
+      </figure>
+      <p>Cabe ao administrador gerenciar os participantes do ambiente, para isso o item "Gerenciar participantes" faz as regras de acesso. Ou seja, vai ter acesso ao ambiente quem estiver participando de acordo com o administrador.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/casinha04.jpg" width="800"/></CENTER>
+        <CENTER><figcaption>Participantes do ambiente.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>Ainda na sessão de gerenciamento do ambiente, temos o gerenciamentos dos atuadores e sensores. Neste o usuário poderá criar quantos dispositivos quiser e definir seus respectivos tópicos para utilização da plataforma. Ao criar um novo atuador, a plataforma automaticamente irá se inscrever no respectivo tópico, a fim de obter informações em tempo real.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/casinha05.jpg" width="800"/></CENTER>
+        <CENTER><figcaption>Atuadores/sensores do ambiente.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>Agora você deve estar se perguntando: Como o aplicativo se comunica com a plataforma?<br>
+      E eu lhe respondo: REST!</p>
+      <p>Devevos saber primeiramente que RESTs não são <i>stateless</i>. Isso quer dizer que elas não guardam sessão de forma alguma. Uma estratégia bastante usada é guar dar informações de <i>login</i> no próprio banco de dados do cliente.</p>
+      <p>Pensando nisso, como estamos usando conceitos da <i>Web</i> para aplicações móveis usamos o <i>LocalStorage</i>, que é um pequeno banco de dados que geralmente ficam no navegador.</p>
+      <p>Também foi pensado na demora que ia ser toda vez que o usuário iniciar o <i>app</i>, fazer a visita ao banco de dados e trazer as informações. Para isso, em vez das informações de <i>login</i> serem guardadas no banco, é o JSON com as informações de respostas que é salvo. Ou seja, a API REST só é visitada no primeiro uso quando o usuário é obrigado a informar seu <i>username</i>, senha e chave da casa.</p>
+      <p>A chave da casa sempre é fornecida após a criação da casa pela aplicação <i>Web</i>. Ela foi criada para direcionar o usuário da aplicação móvel para o ambiente que ele quer controlar. Assim, ao fazer login pelo aplicativo, o <i>back-end</i> irá verificar se este usuário é realmente participante do ambiente da chave informada. Se for, ele vai diretamente para a tela de painel de controle.</p>
+      <p>Abaixo temos um exemplo de <i>login</i>.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/animations.gif" width="300"/></CENTER>
+        <CENTER><figcaption>Fazendo login no CASINHAApp.</figcaption>
+        </CENTER>
+      </figure>
+
+
+      <h2 style="text-align: center;">Funcionamento</h2>
+      <p>Para testes foram usados:</p>
+      <ul>
+        <li>Um roteador <i>D-Link</i>;</li>
+        <li>Uma placa <i>Arduíno Mega</i>;</li>
+        <li>Uma placa <i>Arduíno Uno</i>;</li>
+        <li>Dois módulos <i>Xbee</i>;</li>
+        <li>Uma placa de molde para <i>Xbee</i>;</li>
+        <li>Um módulo <i>Arduíno/Ethernet Shield</i>;</li>
+        <li>Uma <i>protoboard</i>;</li>
+        <li>Três <i>leds</i>;</li>
+        <li>Um sensor de temperatura;</li>
+        <li>Quatro resistores;</li>
+        <li>Um cabo de RJ45 desencapado (para confecção de <i>jumpers</i> de longa distância);</li>
+        <li>Vários <i>jumpers</i> curtos.</li>
+      </ul>
+      <p>O <i>Arduíno Mega</i> é a peça central, pois ele é o dispositivo conectado a <i>internet</i> e consequentemente conectado ao <i>broker</i> de mensagens. Todas as informações passam por ele antes de chegar ao destino final. Nele estão conectados o módulo <i>Ethernet Shield</i>, que o transforma em um nó na rede e o um dos módulos <i>Xbee</i>, que envia as informação recebidas pelo Arduíno para os outros <i>Xbee's</i>.</p>
+
+      <br>
+      
+      <figure>
+        <CENTER><img src="./img/hard02.jpg" width="800"/></CENTER>
+        <CENTER><figcaption>Embarcado conectado ao <i>broker</i>.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>O <i>Arduíno Uno</i> é responsável por efetuar ação num abiente específico, ele está conectado a um módulo <i>Xbee</i> para que receba as informações originadas do <i>Xbee</i> conectado ao <i>broker</i>. Todos os atuadores e sensores ficam conectados a este embarcado.</p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/hard01.jpg" width="800"/></CENTER>
+        <CENTER><figcaption>Embarcado conectado aos atuadores e sensores.</figcaption>
+        </CENTER>
+      </figure>
+
+      <p>O vídeo abaixo mostra alguns dos nossos testes.</p>
+      <p>
+      <div>
+        <center>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/ozqD70NDzHg" frameborder="0" allowfullscreen></iframe>
+        </center>
+      </div>
+      
+      </p>
+
+      <br>
+
+      <figure>
+        <CENTER><img src="./img/calma_gente.jpg" width="600"/></CENTER>
+        <CENTER><figcaption>Apresentação do projeto CASINHA.</figcaption>
+        </CENTER>
+      </figure>
+
+      </div>
+    
   </div>
 
   </section>
